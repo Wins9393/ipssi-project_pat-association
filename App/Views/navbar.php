@@ -9,13 +9,19 @@
             <li class="nav-item">
             <a class="nav-link" href="?page=petsAvailable">Dispo</a>
             </li>
-
             <?php if(isset($_SESSION) && empty($_SESSION)): ?>
             <li class="nav-item">
             <a class="nav-link" href="?page=connexion">Admin</a>
             </li>
             <?php endif ?>
-            <?php if(isset($_SESSION) && !empty($_SESSION)): ?>
+
+            <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
+            <li class="nav-item">
+            <a class="nav-link" href="?page=addPet">Ajouter un Pat</a>
+            </li>
+            <?php endif ?>
+
+            <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
             <li class="nav-item">
             <a class="nav-link" href="?page=deco">Deconnexion</a>
             </li>

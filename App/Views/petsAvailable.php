@@ -11,7 +11,6 @@
                     <h6 class="card-subtitle mb-2"><?= $pet->getAge() ?> ans</h6>
                     <p class="card-text dispo"><?= $pet->getBooked() ? "Réservé" : "Disponible" ?></p>
                     <a href="?page=petView&id=<?php echo $pet->getId(); ?>" class="card-link">Voir</a>
-                    <a href="#" class="card-link">Another link</a>
                 </div>
             </div>
         <?php endforeach ?>

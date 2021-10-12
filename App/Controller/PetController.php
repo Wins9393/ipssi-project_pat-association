@@ -25,8 +25,8 @@ class PetController extends DefaultController{
             $pet = new Pet();
             $pet->hydrate($_POST);
             $this->manager->create($pet);
-            // $this->redirectToRoute("allPokemons");
-            header('Location: /php8-pet-assoc/src/index.php');
+            $this->redirectToRoute("home");
+            // header('Location: /php8-pet-assoc/src/index.php');
 
         }
         $this->render("addPet");
@@ -36,6 +36,7 @@ class PetController extends DefaultController{
     {
         if (!empty($_POST)) {
             $this->manager->update($pet);
+            // $this->redirectToRoute("home");
         }
     }
 

@@ -41,7 +41,11 @@ $createdAt = $pet->getCreatedAt();
         <?php if(!$booked): ?>
         <button class="btn btn-primary btn-lg active" aria-pressed="true" data-bs-toggle="modal" data-bs-target="#bookedConfirm">Book</button>
         <?php endif ?>
-        <!-- <a href="?page=edit&id=<?= $pet->getId(); ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a> -->
+
+        <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
+        <a href="?page=edit&id=<?= $pet->getId(); ?>" class="btn btn-warning btn-lg active" role="button" aria-pressed="true">Modifier</a>
+        <a href="?page=delete&id=<?= $pet->getId(); ?>" class="btn btn-danger btn-lg active" role="button" aria-pressed="true">Supprimer</a>
+        <?php endif ?>
     </div>
     </div>
 </div>

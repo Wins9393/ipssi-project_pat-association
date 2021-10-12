@@ -11,8 +11,8 @@ if(!isset($_GET["page"])) {
 switch ($_GET["page"]) {
     case 'home':
         $controller = new PetController();
-        $controller->getAll("allPets", "pets");
-        // $controller->getLast10("allPets", "pets");
+        // $controller->getAll("allPets", "pets");
+        $controller->getLast10("allPets", "pets");
         break;
     case 'addPet':
         $controller = new PetController();

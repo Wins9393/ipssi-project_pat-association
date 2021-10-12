@@ -11,14 +11,15 @@ class PetModel extends Model{
 
     public function create ($pet)
     {
-        $statement = "INSERT INTO pet (name, age, booked)
-                     VALUES(:name, :age, :booked)";
+        $statement = "INSERT INTO pet (name, age, booked, image)
+                     VALUES(:name, :age, :booked, :image)";
 
         $prepare = $this->db->prepare($statement);
 
         $prepare->bindValue(":name", $pet->getName());
         $prepare->bindValue(":age", $pet->getAge());
         $prepare->bindValue(":booked", $pet->getBooked());
+        $prepare->bindValue(":image", $pet->getImage());
         $prepare->execute();
     }
 
@@ -26,7 +27,7 @@ class PetModel extends Model{
     {
         $id = (int)$pet['id'];
         $statement = "UPDATE pet
-        SET name = :name, age = :age, booked = :booked
+        SET name = :name, age = :age, booked = :booked, image=:image
         WHERE id=:id";
         
         $prepare = $this->db->prepare($statement);
@@ -35,6 +36,7 @@ class PetModel extends Model{
         $prepare->bindValue(":name", $pet['name']);
         $prepare->bindValue(":age", $pet['age']);
         $prepare->bindValue(":booked", $pet['booked']);
+        $prepare->bindValue(":image", $pet['image']);
         $prepare->execute();
     }
 }

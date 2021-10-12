@@ -13,24 +13,45 @@ a{
     justify-content: center;
     align-items: flex-start;
     background: #c8d6e5;
-    width: 60vw;
-    min-height: 70vh;
+    width: 100%;
+    min-height: 80vh;
 }
 .content{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
+}
+form{
+    width: 60%;
+}
+.formContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #c8d6e5;
+    padding: 50px;
+    width: 50%;
 }
 .petCard{
     background: #8395a7;
     color: #c8d6e5 !important;
+}
+.patEdit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 .card-body > a {
     color: white !important;
 }
 .patNavbar{
     background: #c8d6e5 !important;
+    position: sticky !important;
+    top: 0;
+    z-index: 99;
+    margin-bottom: 2px !important;
 }
 .patTitle{
     color: white;
