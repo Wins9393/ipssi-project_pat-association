@@ -1,0 +1,15 @@
+{
+    "name": "wins/php8-pet-assoc",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/",
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Wins",
+            "email": "tktmmpaas@gmail.com"
+        }
+    ]
+}

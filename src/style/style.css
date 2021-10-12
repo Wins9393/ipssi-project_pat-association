@@ -1,0 +1,45 @@
+a{
+    text-decoration: none;
+}
+.wrapperPet{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contentWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #c8d6e5;
+    width: 60vw;
+    min-height: 70vh;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.petCard{
+    background: #8395a7;
+    color: #c8d6e5 !important;
+}
+.card-body > a {
+    color: white !important;
+}
+.patNavbar{
+    background: #c8d6e5 !important;
+}
+.patTitle{
+    color: white;
+}
+.dispo{
+    background: green;
+    padding: 3px;
+}
+.booked{
+    background: #e74c3c;
+    padding: 3px;
+}
