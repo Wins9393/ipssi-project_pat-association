@@ -37,8 +37,9 @@ class UserController extends DefaultController{
             $_SESSION['name'] = $user[0]->name;
             $_SESSION['admin'] = $user[0]->admin;
             return [$arrayEntity => $user];
-        }else{
-            $this->render("erreur");
         }
+        // else{
+        //     $this->render("erreur");
+        // }
     }
 }

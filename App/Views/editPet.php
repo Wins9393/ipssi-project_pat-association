@@ -19,7 +19,7 @@ $image = $pet->getImage();
     </div>
 
     <div class="formContainer">
-        <form class="container text-center form" style="color:white" method="POST">
+        <form class="container text-center form" method="POST" action="?page=home">
             <div class="row mb-4">
                 <div class="col">
                     <input type="hidden" value="<?= $id ?>" name="id">

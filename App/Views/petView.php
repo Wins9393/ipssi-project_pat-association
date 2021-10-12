@@ -34,12 +34,12 @@ $createdAt = $pet->getCreatedAt();
     <ul class="list-group list-group-flush">
         <li class="list-group-item" style="font-size: 1.4rem;"><?= $age; ?> Ans</li>
         <li class="list-group-item" style="font-size: 1.4rem;"><?= $booked ? "Réservé" : "Disponible"; ?></li>
-        <li class="list-group-item" style="font-size: 1.4rem;">Created At: <?= $createdAt; ?></li>
+        <li class="list-group-item" style="font-size: 1.4rem;">Créé le: <?= $createdAt; ?></li>
     </ul>
     <div class="card-body">
-        <a href="?page=home" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Back</a>
+        <a href="?page=home" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Retour</a>
         <?php if(!$booked): ?>
-        <button class="btn btn-primary btn-lg active" aria-pressed="true" data-bs-toggle="modal" data-bs-target="#bookedConfirm">Book</button>
+        <button class="btn btn-primary btn-lg active" aria-pressed="true" data-bs-toggle="modal" data-bs-target="#bookedConfirm">Réserver</button>
         <?php endif ?>
 
         <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>

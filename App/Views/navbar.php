@@ -7,11 +7,17 @@
         <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a class="nav-link" href="?page=petsAvailable">Dispo</a>
+            <a class="nav-link" href="?page=petsAvailable">Disponibles</a>
             </li>
             <?php if(isset($_SESSION) && empty($_SESSION)): ?>
             <li class="nav-item">
             <a class="nav-link" href="?page=connexion">Admin</a>
+            </li>
+            <?php endif ?>
+
+            <?php if(isset($_SESSION['admin']) && $_SESSION['admin'] == true): ?>
+            <li class="nav-item">
+            <a class="nav-link" href="?page=allPets">Tous</a>
             </li>
             <?php endif ?>
 

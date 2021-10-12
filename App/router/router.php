@@ -12,6 +12,7 @@ switch ($_GET["page"]) {
     case 'home':
         $controller = new PetController();
         // $controller->getAll("allPets", "pets");
+        $controller->updatePet($_POST);
         $controller->getLast10("allPets", "pets");
         break;
     case 'addPet':
@@ -21,6 +22,10 @@ switch ($_GET["page"]) {
     case 'petsAvailable':
         $controller = new PetController();
         $controller->getAllAvailable("petsAvailable", "pets");
+        break;
+    case 'allPets':
+        $controller = new PetController();
+        $controller->getAll("allPets", "pets");
         break;
     case 'petView':
         $controller = new PetController();
@@ -33,7 +38,7 @@ switch ($_GET["page"]) {
     case 'edit':
         $controller = new PetController();
         $controller->getEntityById("editPet", $_GET["id"], "pet");
-        $controller->updatePet($_POST);
+        // $controller->updatePet($_POST);
     break;
     case 'connexion':
         $controller = new DefaultController();
@@ -41,12 +46,11 @@ switch ($_GET["page"]) {
         break;
     case 'admin':
         $controller = new UserController();
-        $controller->isGranted($controller->getSingleUser($_POST['mail'], $_POST['password']), 'user');
-        // if(isset($_SESSION) && empty($_SESSION)){
-        //     $_SESSION['admin'] = true;
-        //     var_dump($_SESSION);
-        // }
-        $controller->redirectToRoute("home");
+        if($controller->isGranted($controller->getSingleUser($_POST['mail'], $_POST['password']), 'user')){
+            $controller->redirectToRoute("home");
+        }else{
+            $controller->render("erreur");
+        }
         break;
     case 'deco':
         session_destroy();
